@@ -1,0 +1,23 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python environments
+.venv*/
+__pycache__/
+*.py[cod]
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Runtime artifacts
+*.log
+evidence/runs/
+
+# IDE and operating system
+.vscode/
+.idea/
+.DS_Store
