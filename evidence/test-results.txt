@@ -1,0 +1,57 @@
+test_all_frameworks (test_research.ResearchTests) ... ok
+test_configuration (test_research.ResearchTests) ... ok
+test_empty_query (test_research.ResearchTests) ... ok
+test_invalid_citations (test_research.ResearchTests) ... ok
+test_missing_citations (test_research.ResearchTests) ... ok
+test_oversized_query (test_research.ResearchTests) ... ok
+test_targeted_research (test_research.ResearchTests) ... ok
+test_valid_citations (test_research.ResearchTests) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.009s
+
+OK
+test_checkpoint (test_langgraph.LangGraphTests) ... ok
+test_offline_usage (test_langgraph.LangGraphTests) ... ok
+test_targeted_research (test_langgraph.LangGraphTests) ... ok
+test_workflow (test_langgraph.LangGraphTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.092s
+
+OK
+test_agent_handoff (test_crewai.CrewAITests) ... /home/jemmie/agent-frameworks-survey/.venv-crewai/lib/python3.10/site-packages/crewai/agent/core.py:455: DeprecationWarning: function_calling_llm is deprecated and will be removed in a future release.
+  if self.function_calling_llm and not isinstance(
+/home/jemmie/agent-frameworks-survey/.venv-crewai/lib/python3.10/site-packages/crewai/agent/core.py:463: DeprecationWarning: deprecated
+  if self.allow_code_execution:
+/home/jemmie/agent-frameworks-survey/.venv-crewai/lib/python3.10/site-packages/crewai/agent/core.py:474: DeprecationWarning: deprecated
+  if self.reasoning and self.planning_config is None:
+/home/jemmie/agent-frameworks-survey/.venv-crewai/lib/python3.10/site-packages/crewai/crew.py:661: DeprecationWarning: function_calling_llm is deprecated and will be removed in a future release.
+  if self.function_calling_llm and not isinstance(self.function_calling_llm, LLM):
+/home/jemmie/agent-frameworks-survey/.venv-crewai/lib/python3.10/site-packages/crewai/crews/utils.py:372: DeprecationWarning: function_calling_llm is deprecated and will be removed in a future release.
+  crew.function_calling_llm,
+/home/jemmie/agent-frameworks-survey/.venv-crewai/lib/python3.10/site-packages/crewai/crews/utils.py:87: DeprecationWarning: function_calling_llm is deprecated and will be removed in a future release.
+  if not agent.function_calling_llm:  # type: ignore[attr-defined]
+/home/jemmie/agent-frameworks-survey/.venv-crewai/lib/python3.10/site-packages/crewai/agent/core.py:1375: DeprecationWarning: function_calling_llm is deprecated and will be removed in a future release.
+  function_calling_llm=self.function_calling_llm,
+/home/jemmie/agent-frameworks-survey/.venv-crewai/lib/python3.10/site-packages/crewai/crew.py:1690: DeprecationWarning: deprecated
+  if hasattr(agent, "allow_code_execution") and getattr(
+/home/jemmie/agent-frameworks-survey/.venv-crewai/lib/python3.10/site-packages/crewai/crew.py:1697: DeprecationWarning: deprecated
+  and hasattr(agent, "multimodal")
+/home/jemmie/agent-frameworks-survey/.venv-crewai/lib/python3.10/site-packages/crewai/crew.py:1698: DeprecationWarning: deprecated
+  and getattr(agent, "multimodal", False)
+Using an approximate input token count for model 'deterministic-baseline': assuming one token per four characters because a native token count is unavailable.
+Using an approximate input token count for model 'deterministic-baseline': assuming one token per four characters because a native token count is unavailable.
+ok
+test_invalid_input (test_crewai.CrewAITests) ... ok
+test_offline_usage (test_crewai.CrewAITests) ... Using an approximate input token count for model 'deterministic-baseline': assuming one token per four characters because a native token count is unavailable.
+Using an approximate input token count for model 'deterministic-baseline': assuming one token per four characters because a native token count is unavailable.
+ok
+test_workflow (test_crewai.CrewAITests) ... Using an approximate input token count for model 'deterministic-baseline': assuming one token per four characters because a native token count is unavailable.
+Using an approximate input token count for model 'deterministic-baseline': assuming one token per four characters because a native token count is unavailable.
+ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.826s
+
+OK

@@ -1,0 +1,68 @@
+{
+  "mode": "offline",
+  "model": "deterministic-baseline",
+  "runs_per_framework": 5,
+  "platform": "Linux-6.18.58.1-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+  "python": "3.10.12",
+  "results": {
+    "LangGraph": {
+      "successful_runs": 5,
+      "orchestration": {
+        "samples_ms": [
+          13.3,
+          10.0,
+          11.2,
+          7.4,
+          7.8
+        ],
+        "mean_ms": 9.94,
+        "median_ms": 10.0,
+        "minimum_ms": 7.4,
+        "maximum_ms": 13.3
+      },
+      "end_to_end": {
+        "samples_ms": [
+          812.93,
+          1123.2,
+          878.37,
+          809.94,
+          894.13
+        ],
+        "mean_ms": 903.71,
+        "median_ms": 878.37,
+        "minimum_ms": 809.94,
+        "maximum_ms": 1123.2
+      }
+    },
+    "CrewAI": {
+      "successful_runs": 5,
+      "orchestration": {
+        "samples_ms": [
+          160.0,
+          292.5,
+          228.5,
+          190.7,
+          180.7
+        ],
+        "mean_ms": 210.48,
+        "median_ms": 190.7,
+        "minimum_ms": 160.0,
+        "maximum_ms": 292.5
+      },
+      "end_to_end": {
+        "samples_ms": [
+          3924.62,
+          4322.17,
+          4556.0,
+          4073.05,
+          3850.1
+        ],
+        "mean_ms": 4145.19,
+        "median_ms": 4073.05,
+        "minimum_ms": 3850.1,
+        "maximum_ms": 4556.0
+      }
+    }
+  },
+  "summary_consistency": true
+}
