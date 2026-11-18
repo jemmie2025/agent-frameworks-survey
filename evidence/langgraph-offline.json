@@ -1,0 +1,16 @@
+{
+  "run_id": "83411903-930a-4cde-aca0-8707c673bf90",
+  "framework": "LangGraph",
+  "mode": "offline",
+  "model": "deterministic-baseline",
+  "status": "success",
+  "duration_seconds": 0.0093,
+  "sources_retrieved": 4,
+  "citation_validation": true,
+  "checkpoint_available": true,
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "summary": "- LangGraph: LangGraph orchestrates stateful workflows using nodes, edges and shared state. It supports checkpointing, streaming, human approval and durable execution. It is suitable for controlled enterprise workflows. [LG01]\n- CrewAI: CrewAI coordinates specialized agents through roles, tasks and crews. Flows provide event-driven orchestration, state management and persistence for production applications. [CA01]\n- AutoGen: AutoGen supports conversational multi-agent collaboration and message-based execution. The project is archived and Microsoft recommends Microsoft Agent Framework for new implementations. [AG01]\n- Claude Agent SDK: Claude Agent SDK provides an autonomous agent loop, built-in tools, MCP integration, sessions, permission controls, hooks and usage monitoring. [CL01]"
+}
