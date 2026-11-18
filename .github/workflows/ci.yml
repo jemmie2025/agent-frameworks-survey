@@ -1,0 +1,78 @@
+name: Agent Framework Validation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate ${{ matrix.framework }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+
+    strategy:
+      fail-fast: false
+      matrix:
+        framework: [langgraph, crewai]
+
+    env:
+      FRAMEWORK: ${{ matrix.framework }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+
+      - name: Build Docker image
+        run: |
+          docker build \
+            --build-arg FRAMEWORK="$FRAMEWORK" \
+            -t "agent-survey-$FRAMEWORK:ci" .
+
+      - name: Shared regression tests
+        run: |
+          docker run --rm --network none \
+            "agent-survey-$FRAMEWORK:ci" \
+            python -m unittest discover \
+            -s tests -p 'test_research.py' -v
+
+      - name: Framework integration tests
+        run: |
+          docker run --rm --network none \
+            "agent-survey-$FRAMEWORK:ci" \
+            python -m unittest discover \
+            -s tests -p "test_$FRAMEWORK.py" -v
+
+      - name: Validate agent execution
+        run: |
+          docker run --rm --network none \
+            "agent-survey-$FRAMEWORK:ci" > result.json
+
+          python3 -c '
+          import json
+          with open("result.json") as f:
+              result = json.load(f)
+          assert result["status"] == "success"
+          assert result["citation_validation"]
+          assert result["sources_retrieved"] == 4
+          assert result["mode"] == "offline"
+          print("Agent execution: PASSED")
+          '
+
+      - name: Verify non-root execution
+        run: |
+          test "$(docker run --rm --network none \
+            "agent-survey-$FRAMEWORK:ci" id -u)" = "10001"
+
+      - name: Verify dependency integrity
+        run: |
+          docker run --rm --network none \
+            "agent-survey-$FRAMEWORK:ci" \
+            python -m pip check

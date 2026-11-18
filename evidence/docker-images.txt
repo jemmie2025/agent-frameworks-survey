@@ -1,0 +1,3 @@
+IMAGE                          ID             DISK USAGE   CONTENT SIZE   EXTRA
+agent-survey-crewai:1.0.0      15ee2baca5bb       1.51GB          355MB        
+agent-survey-langgraph:1.0.0   03ee6a9fdc66        298MB         65.2MB        
