@@ -1,0 +1,17 @@
+{
+  "project": "agent-frameworks-survey",
+  "environment": "development",
+  "provider": "openai",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "reasoning_effort": "none",
+  "max_output_tokens": 700,
+  "request_timeout_seconds": 60,
+  "run_timeout_seconds": 240,
+  "max_agent_iterations": 3,
+  "max_tool_calls": 3,
+  "max_query_chars": 500,
+  "max_retries": 1,
+  "research_source": "data/sources.json",
+  "logging_level": "INFO",
+  "offline_mode": true
+}
