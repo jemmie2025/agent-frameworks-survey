@@ -11,7 +11,7 @@ Engineering evaluation of LangGraph, CrewAI, AutoGen and Claude Agent SDK to det
 - **LangGraph:** Stateful research workflow with explicit graph execution, checkpointing and citation validation.
 - **CrewAI:** Role-based research and summarization agents with controlled tool execution and sequential task handoff.
 
-Both implementations use a shared research corpus and configurable model settings.
+Both implementations use a shared research corpus and deterministic offline models. Live OpenAI integration is configured but remains unvalidated.
 
 ## Verified Results
 
@@ -44,7 +44,7 @@ No API credentials are required for offline execution.
 
 ## Engineering Controls
 
-Pinned dependencies, isolated environments, configurable execution limits, restricted tools, protected credentials, structured execution metrics and automated CI validation.
+Pinned dependencies, isolated environments, configured execution limits, read-only research tools, Git and Docker credential exclusions, structured execution metrics, non-root containers, network-isolated offline execution and automated CI validation.
 
 ## Documentation
 
@@ -60,9 +60,25 @@ Adopt LangGraph for controlled, stateful enterprise workflows and CrewAI for col
 
 AutoGen is archived; evaluate Microsoft Agent Framework for new implementations.
 
-## Status
+## Implementation Scope and Limitations
 
-Validated offline proof of concept. Live inference, persistent recovery, vulnerability scanning and production load testing remain outstanding.
+The project is a validated offline proof of concept, not a production deployment.
+
+| Component | Actual status |
+|---|---|
+| LangGraph and CrewAI | Implemented and validated offline |
+| Live GPT inference | Configured, not tested |
+| Claude Agent SDK | Researched only |
+| AutoGen | Researched only |
+| PostgreSQL persistent state | Recommended, not implemented |
+| Prometheus, Grafana and Vault | Proposed architecture |
+| External observability integration | Not validated |
+| Vulnerability scanning | Not performed |
+| Production load testing | Not performed |
+| Persistent state recovery | Not validated |
+| AI-generated summary accuracy | Not evaluated |
+
+Citation validation verifies source identifiers, not factual accuracy. Container validation confirms non-root execution and network isolation, not comprehensive security certification.
 
 ## Validation Evidence
 
